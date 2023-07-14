@@ -6,16 +6,6 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
-/*
-if (!score){
-  score = {
-    wins: 0,
-    losses: 0,
-    ties: 0
-  }
-}
-*/
-
 let result = '';
 
 function pickComputerMove() {
@@ -93,7 +83,7 @@ let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
       isAutoPlaying = true;
