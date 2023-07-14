@@ -4,7 +4,7 @@
   <head>
     <title>Rock Paper Scissors</title>
 
-    <link rel = "stylesheet" href = "rock-paper-scissors-styles-auto.css">
+    <link rel = "stylesheet" href = "12-rock-paper-scissors-styles-auto.css">
   </head>
   <body>
     <p class = "title">
@@ -21,8 +21,7 @@
 
 
     <button class = "scissors-button js-scissors-button">
-      <img class = "scissors-pic" src = "rock-paper-scissors-pics/scissors-emoji.png">
-    </button>
+      <img class = "scissors-pic" src = "rock-paper-scissors-pics/scissors-emoji.png"></button>
 
     <p class = "js-result result"></p>
 
@@ -30,17 +29,11 @@
 
     <p class = "js-score score"></p>
 
-    <button class = "reset-score-button" onclick = "
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateScoreElement();
-    ">Reset Score</button>
+    <button class = "reset-score-button js-reset-score-button">Reset Score</button>
 
-    <button class = "auto-play-button" onclick = "autoPlay();">Auto Play</button>
+    <button class = "auto-play-button js-auto-play-button">Start Auto Play</button>
 
 
-    <script src = "rock-paper-scissors-auto.js"></script>
+    <script src = "12-rock-paper-scissors-auto.js"></script>
   </body>
 </html>
