@@ -37,7 +37,7 @@ body {
   margin-top: 60px;
 }
 
-.reset-score-button, .auto-play-button{
+.reset-score-button, .auto-play-button, .confirm-yes-button, .confirm-no-button{
   padding: 8px 14px;
   background-color: white;
   border: none;
@@ -52,4 +52,30 @@ body {
 
 .reset-score-button:active, .auto-play-button:active{
   opacity: 0.4;
+}
+
+.confirmation-grid{
+  margin-top: 10px;
+  display: grid;
+  column-gap: 8px;
+  grid-template-columns: 150px 100px 100px;
+  align-items: center;
+}
+
+.instruction-container{
+  margin-top: 10px;
+  display: grid;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  width: 400px;
+}
+
+.main-instruction {
+  font-size: 18px;
+}
+
+.instruction-text, .main-instruction {
+  margin: 6px;
 }

@@ -13,6 +13,10 @@ document.body.addEventListener('keydown', (event) => {
     playGame('paper');
   } else if (event.key === 's') {
     playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    confirmReset();
   }
 });
 
@@ -29,12 +33,30 @@ document.querySelector('.js-scissors-button').addEventListener('click', () => {
 });
 
 document.querySelector('.js-reset-score-button').addEventListener('click', () => {
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
-  localStorage.removeItem('score');
-  updateScoreElement();
+  confirmReset();
 })
+
+function confirmReset() {
+  const confirmationElement = document.querySelector('.js-confirmation-text');
+  confirmationElement.innerHTML = `
+    <div>Are you sure?</div>
+    <button class = "js-confirm-yes-button confirm-yes-button">Yes</button>
+    <button class = "js-confirm-no-button confirm-no-button">No</button>
+  `;
+
+  document.querySelector('.js-confirm-yes-button').addEventListener('click', () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    confirmationElement.innerHTML = '';
+  });
+
+  document.querySelector('.js-confirm-no-button').addEventListener('click', () => {
+    confirmationElement.innerHTML = '';
+  });
+}
 
 document.querySelector('.js-auto-play-button').addEventListener('click', () => {
   autoPlay();
